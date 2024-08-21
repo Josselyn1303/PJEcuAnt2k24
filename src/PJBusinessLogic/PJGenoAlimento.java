@@ -1,5 +1,5 @@
 package PJBusinessLogic;
 
-public abstract class PJGenoAlimento {
+public abstract class PJGenoAlimento extends PJAlimento {
 
 }

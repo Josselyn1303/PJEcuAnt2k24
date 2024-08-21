@@ -12,6 +12,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
 
+import PJBusinessLogic.PJGenoAlimento;
+import PJBusinessLogic.PJX;
+import PJBusinessLogic.PJXX;
+import PJBusinessLogic.PJXY;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,10 +25,10 @@ import java.util.ArrayList;
 public class PJForm extends JFrame{
 
     public PJForm(){
-        customerControls();
+        PJcustomerControls();
     }
 
-    private void customerControls(){
+    private void PJcustomerControls(){
        
         setTitle("EcuAnt 2k24A");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,7 +36,7 @@ public class PJForm extends JFrame{
         setLayout(new BorderLayout());
 
         JPanel topPanel= new JPanel(new BorderLayout());
-        JLabel imgLabel = new JLabel(new ImageIcon("src\\PJUserInterface\\PJResource\\Hormiga.png"));
+        JLabel imgLabel = new JLabel(new ImageIcon("src\\PJUserInterface\\PJResource\\Hormiga2.png"));
         JLabel titleLabel = new JLabel("Hormiguero virtual", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 16));
         topPanel.add(imgLabel, BorderLayout.NORTH);
@@ -44,7 +49,15 @@ public class PJForm extends JFrame{
 
         JPanel comboPanel = new JPanel();
         String [] genoOptions = {"X", "XX", "XY"};
-        JComboBox <String> genoCombo = new JComboBox<>(genoOptions);
+        //JComboBox <String> genoCombo = new JComboBox<>(genoOptions);
+
+        ArrayList<PJGenoAlimento> lstGenoAlimento = new ArrayList<>();
+        lstGenoAlimento.add(new PJX());
+        lstGenoAlimento.add(new PJXX());
+        lstGenoAlimento.add(new PJXY());
+
+        JComboBox<PJGenoAlimento> genoCombo = new JComboBox<>(lstGenoAlimento.toArray(new PJGenoAlimento[0]));
+            
 
         String [] ingestaOptions = {"Carnivoro", "Herbivoro", "Omnivoro", "Insectívoro", "Nectanrívoros"};
         JComboBox <String> ingestaCombo = new JComboBox<>(ingestaOptions);

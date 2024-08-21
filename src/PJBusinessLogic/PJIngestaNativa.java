@@ -1,5 +1,6 @@
 package PJBusinessLogic;
 
-public abstract class PJIngestaNativa {
+public abstract class PJIngestaNativa extends PJAlimento{
+    
 
 }

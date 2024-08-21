@@ -1,5 +1,7 @@
 package PJBusinessLogic;
 
-public class PJX {
-
+public class PJX extends PJGenoAlimento{
+    public PJX(){
+        tipo = "X";
+    }
 }
